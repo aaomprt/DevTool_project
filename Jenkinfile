@@ -1,0 +1,72 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_IMAGE = 'aaompp/django-web-app:latest'
+        DOCKER_CREDENTIALS = credentials('dockerhub')
+        GCP_PROJECT_ID = 'project-devtool'
+        GCP_CREDENTIALS = credentials('ssh-prod_instance')
+    }
+
+    stages {
+        stage('Check Python Installation') {
+            steps {
+                script {
+                    def pythonInstalled = sh(script: "which python3", returnStatus: true) == 0
+                    if (!pythonInstalled) {
+                        sh 'sudo apt update'
+                        sh 'sudo apt install -y python3'
+                    }
+                }
+            }
+        }
+
+        stage('Start Jenkins') {
+            steps {
+                sh 'echo Start Jenkins............'
+                sh 'echo docker : user = $DOCKER_CREDENTIALS_USR : password = $DOCKER_CREDENTIALS_PSW'
+            }
+        }
+
+        stage('Remove Existing Docker Container and Image') {
+            steps {
+                script {
+                    sh 'docker ps -q --filter "ancestor=$DOCKER_IMAGE" | xargs --no-run-if-empty docker stop'
+                    sh 'docker ps -aq --filter "ancestor=$DOCKER_IMAGE" | xargs --no-run-if-empty docker rm'
+                    sh 'docker images -q $DOCKER_IMAGE | xargs --no-run-if-empty docker rmi'
+                }
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                dir('./') {
+                    sh 'docker build -t $DOCKER_IMAGE .'
+                }
+            }
+        }
+
+        stage('Push Docker Image to Docker Hub') {
+            steps {
+                script {
+                    sh 'echo $DOCKER_CREDENTIALS_PSW | docker login --username $DOCKER_CREDENTIALS_USR --password-stdin'
+                    sh 'docker push $DOCKER_IMAGE'
+                }
+            }
+        }
+
+        stage('Run Docker Container') {
+            steps {
+                script {
+                    sh 'docker run -d -p 8000:8000 $DOCKER_IMAGE'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            sh 'docker logout'
+        }
+    }
+}
