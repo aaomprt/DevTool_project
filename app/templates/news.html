@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News (DOP) กรมกิจการผู้สูงอายุ</title>
+  <link rel="stylesheet" href="css\news.css">
+</head>
+
+<body>
+  <header>
+  </header>
+
+  <div class="bar">
+    <a href="#">บ้านหยาดหิมะ</a>
+    <a href="#">กิจกรรม</a>
+    <a href="#"><img src="css\pngwing.png" alt="Logo"  ></a>
+    <a href="news.html">ข่าวสาร</a>
+    <a href="#">จ้างงาน</a>
+  </div>
+
+  <div class="news-section">
+    <h2>ข่าวสาร</h2>
+
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 4</div>
+        <img src="css\กองทุนผู้สูงอายุ.png">
+      </div>
+    
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 4</div>
+        <img src="css\พม.png" >
+      </div>
+    
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 4</div>
+        <img src="css\ข่าวลวง.png" >
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">4 / 4</div>
+        <img src="css\lgbt.jpg" >
+      </div>
+    
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+<!-- The dots/circles -->
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <br>
+
+    <div class="news-item">
+      <img src="css\กองทุนผู้สูงอายุ.png" alt="กองทุนผู้สูงอายุ">
+      <div class="news-item-content">
+        <h3>กองทุนผู้สูงอายุ ขอแจ้งปิดปรับปรุงระบบชั่วคราว เพื่อพัฒนาและเพิ่มประสิทธิภาพการบริการให้ดียิ่งขึ้น ระหว่างวันเสาร์ที่ 5 ถึงวันอาทิตย์ที่ 6 ตุลาคม พ.ศ. 2567 ตั้งแต่เวลา 00.00 - 04.00 น.</h3>
+        <p class="date">📅 2 ตุลาคม 2567</p>
+        <button class="button-24" onclick="window.location.href='page1.html'">อ่านต่อ</button>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <img src="css\พม.png" alt="พม.โดย กรมผส.">
+      <div class="news-item-content">
+        <h3>พม.โดย กรมผส. เชิญชวนผู้สูงอายุที่ได้รับการสนับสนุนกู้ยืมเงินทุนเพื่อการประกอบอาชีพ เข้าร่วมโครงการอบรมรบเชิงปฏิบัติการเพื่อพัฒนาศักยภาพในการประกอบอาชีพแก่ผู้กู้ยืมเงินทุนประกอบอาชีพ รุ่นที่ 3</h3>
+        <p class="date">📅 8 สิงหาคม 2567</p>
+        <button class="button-24" onclick="window.location.href='page2.html'">อ่านต่อ</button>
+      </div>
+    </div>
+    <div class="news-item">
+      <img src="css\ข่าวลวง.png" alt="ข่าวลวง">
+      <div class="news-item-content">
+        <h3>เจอข่าวร้าย & ข่าวลวงทำไงดี</h3>
+        <p class="date">📅 15 กรกฏาคม 2567</p>
+        <button class="button-24" onclick="window.location.href='page3.html'">อ่านต่อ</button>
+      </div>
+    </div>
+    <div class="news-item">
+      <img src="css\lgbt.jpg" alt="ข่าวลวง">
+      <div class="news-item-content">
+        <h3>DOP JOURNAL by Strategy and Planning Division ฉบับที่ 6/2567 HAPPY PRIDE ผู้สูงอายุ LGBT</h3>
+        <p class="date">📅 4 กรกฏาคม 2567</p>
+        <button class="button-24" onclick="window.location.href='page4.html'">อ่านต่อ</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="floral-left"></div>
+    <div class="floral-right"></div>
+
+</body>
+<script>
+    let slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+</script>
+</html>

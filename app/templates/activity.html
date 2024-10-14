@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity</title>
+    <link rel="stylesheet" href="css/style_back_bar.css">
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: auto auto;
+            width: 60%;
+            margin: 50px auto;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+            padding: 3px 20px 15px 20px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #D9D9D9;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .box:hover {
+            box-shadow: 2px 3px 8px rgb(105, 105, 105);
+            transform: scale(1.05);
+        }
+
+        .box img {
+            border-radius: 8px;
+            width: 300px;
+            object-fit: cover;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bar">
+        <a href="#">บ้านหยาดหิมะ</a>
+        <a href="activity.html">กิจกรรม</a>
+        <a href="#"><img src="image/pngwing.png" alt="Logo"></a>
+        <a href="news.html">ข่าวสาร</a>
+        <a href="#">จ้างงาน</a>
+    </div>
+
+    <div class="floral-left"></div>
+    <div class="floral-right"></div>
+
+    <h1 style="text-align: center;">กิจกรรม</h1>
+
+    <div class="container">
+        <a href="hobby.html">
+            <div class="box">
+                <h3>กิจกรรมงานอดิเรกสร้างสรรค์</h3>
+                <img src="{% static 'image/hobby.png' %}">
+            </div>
+        </a>
+        <a href="mood.html">
+            <div class="box">
+                <h3>กิจกรรมเพื่อพัฒนาจิตใจและอารมณ์</h3>
+                <img src="{% static 'image/mood.png' %}">
+            </div>
+        </a>
+        <a href="health.html">
+            <div class="box">
+                <h3>กิจกรรมเพื่อส่งเสริมสุขภาพร่างกาย</h3>
+                <img src="{% static 'image/health.png' %}">
+            </div>
+        </a>
+        <a href="technology.html">
+            <div class="box">
+                <h3>กิจกรรมเพื่อพัฒนาทักษะทางเทคโนโลยี</h3>
+                <img src="{% static 'image/technology.png' %}">
+            </div>
+        </a>
+    </div>
+</body>
+
+</html>
