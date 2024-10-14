@@ -1,28 +1,72 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/detail-job.css">
+    <link rel="stylesheet" href="{% static 'detail-job.css' %}">
     <title>Job Details</title>
 </head>
+<style>
+
+    .bar {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 10px;
+    }
+    
+    .bar a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    .bar img {
+        height: 100px;
+        width: 100px;
+    }
+    
+    .floral-left,
+    .floral-right {
+        position: absolute;
+        top: 15%;
+        bottom: 0;
+        width: 140px;
+        height: 200%;
+        background-image: url("/static/image/pngegg.png");
+        background-repeat: space repeat;
+        background-position: top left;
+        background-size: contain;
+    }
+    
+    .floral-left {
+        left: 0;
+    }
+    
+    .floral-right {
+        right: 0;
+    }
+
+</style>
 
 <body>
-    <div class="topnav">
-        <a href="#home" class="link-left">สวัสดีวันอังคาร</a>
-        <div class="right-links">
-            <a href="#news">ข่าวสาร</a>
-            <a href="#contact">กิจกรรม</a>
-            <a href="#about">โครงการจ้างงานบ้านหยาดหิมะ</a>
-        </div>
+
+    <div class="bar">
+        <a href="{% url 'home' %}">บ้านหยาดหิมะ</a>
+        <a href="{% url 'activity' %}">กิจกรรม</a>
+        <a href="{% url 'home' %}"><img src="{% static 'image/pngwing.png' %}" alt="Logo"></a>
+        <a href="{% url 'news' %}">ข่าวสาร</a>
+        <a href="{% url 'work' %}">จ้างงาน</a>
     </div>
 
     <div class="container-box">
         <h1 class="h1-fordetail">ชวนคุณลุงคุณป้า สร้างรายได้จากการชงเครื่องดื่ม</h1>
        
         <div class="content-wrapper">
-            <img class="side-image" src="image/pngegg.png" alt="Left Image">
+            <img class="side-image" src="{% static 'image/pngegg.png' %}" alt="Left Image">
             
             <div class="content">
 
@@ -30,7 +74,7 @@
 
                     <div class="job-position">
 
-                        <img class="job-image" src="image/young2.jpg" alt="Job Image">
+                        <img class="job-image" src="{% static 'image/young2.jpg' %}" alt="Job Image">
                         <br>
 
                         <h2>ตำแหน่ง: บาริสต้า</h2>
@@ -75,7 +119,7 @@
 
 
             </div>
-            <img class="side-image" src="image/pngegg.png" alt="Right Image">
+            <img class="side-image" src="{% static 'image/pngegg.png' %}" alt="Right Image">
         </div>
     </div>
 </body>

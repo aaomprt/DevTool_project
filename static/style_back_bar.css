@@ -30,7 +30,7 @@ body {
     bottom: 0;
     width: 140px;
     height: 200%;
-    background-image: url('/DevTool_project/image/pngegg.png');
+    background-image: url("/static/image/pngegg.png");
     background-repeat: space repeat;
     background-position: top left;
     background-size: contain;

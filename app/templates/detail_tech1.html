@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,17 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>กิจกรรมเพื่อพัฒนาทักษะทางเทคโนโลยี</title>
-    <link rel="stylesheet" href="css/style_back_bar.css">
-    <link rel="stylesheet" href="css/style_actdetail.css">
+    <link rel="stylesheet" href="{% static 'style_back_bar.css' %}">
+    <link rel="stylesheet" href="{% static 'style_actdetail.css' %}">
 </head>
 
 <body>
     <div class="bar">
-        <a href="#">บ้านหยาดหิมะ</a>
-        <a href="activity.html">กิจกรรม</a>
-        <a href="#"><img src="image/pngwing.png" alt="Logo"></a>
-        <a href="news.html">ข่าวสาร</a>
-        <a href="#">จ้างงาน</a>
+        <a href="{% url 'home' %}">บ้านหยาดหิมะ</a>
+        <a href="{% url 'activity' %}">กิจกรรม</a>
+        <a href="{% url 'home' %}"><img src="{% static 'image/pngwing.png' %}" alt="Logo"></a>
+        <a href="{% url 'news' %}">ข่าวสาร</a>
+        <a href="{% url 'work' %}">จ้างงาน</a>
     </div>
 
     <div class="floral-left"></div>
@@ -24,7 +25,7 @@
     <div class="container">
         <h1>กิจกรรมเพื่อพัฒนาทักษะทางเทคโนโลยี</h1>
         <div class="box">
-            <img src="image/internet.png">
+            <img src="{% static 'image/internet.png' %}">
             <div class="content">
                 <h3>เปิดโลกอินเตอร์เน็ต 101</h3>
                 <p>พี่ ๆ ท่านไหนที่ไม่สันทัดด้านการใช้งานโทรศัพท์มือถือขอให้ยกมือขึ้น! โอกาสนี้ไม่ลงไม่ได้แล้ว

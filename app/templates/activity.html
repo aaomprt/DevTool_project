@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity</title>
-    <link rel="stylesheet" href="css/style_back_bar.css">
+    <link rel="stylesheet" href="{% static 'style_back_bar.css' %}">
     <style>
         .container {
             display: grid;
@@ -46,11 +47,11 @@
 
 <body>
     <div class="bar">
-        <a href="#">บ้านหยาดหิมะ</a>
-        <a href="activity.html">กิจกรรม</a>
-        <a href="#"><img src="image/pngwing.png" alt="Logo"></a>
-        <a href="news.html">ข่าวสาร</a>
-        <a href="#">จ้างงาน</a>
+        <a href="{% url 'home' %}">บ้านหยาดหิมะ</a>
+        <a href="{% url 'activity' %}">กิจกรรม</a>
+        <a href="{% url 'home' %}"><img src="{% static 'image/pngwing.png' %}" alt="Logo"></a>
+        <a href="{% url 'news' %}">ข่าวสาร</a>
+        <a href="{% url 'work' %}">จ้างงาน</a>
     </div>
 
     <div class="floral-left"></div>
@@ -59,28 +60,28 @@
     <h1 style="text-align: center;">กิจกรรม</h1>
 
     <div class="container">
-        <a href="hobby.html">
+        <a href="{% url 'hobby' %}">
             <div class="box">
                 <h3>กิจกรรมงานอดิเรกสร้างสรรค์</h3>
-                <img src="image/hobby.png">
+                <img src="{% static 'image/hobby.png' %}">
             </div>
         </a>
-        <a href="mood.html">
+        <a href="{% url 'mood' %}">
             <div class="box">
                 <h3>กิจกรรมเพื่อพัฒนาจิตใจและอารมณ์</h3>
-                <img src="image/mood.png">
+                <img src="{% static 'image/mood.png' %}">
             </div>
         </a>
-        <a href="health.html">
+        <a href="{% url 'health' %}">
             <div class="box">
                 <h3>กิจกรรมเพื่อส่งเสริมสุขภาพร่างกาย</h3>
-                <img src="image/health.png">
+                <img src="{% static 'image/health.png' %}">
             </div>
         </a>
-        <a href="technology.html">
+        <a href="{% url 'tech' %}">
             <div class="box">
                 <h3>กิจกรรมเพื่อพัฒนาทักษะทางเทคโนโลยี</h3>
-                <img src="image/technology.png">
+                <img src="{% static 'image/technology.png' %}">
             </div>
         </a>
     </div>

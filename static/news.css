@@ -10,6 +10,7 @@
     background: linear-gradient(176deg, rgba(255,238,194,1) 0%, rgba(255,171,111,1) 83%);
     margin: 0;
     padding: 0;
+    background-attachment: fixed;
   }
 
   .bar {
@@ -88,7 +89,7 @@
     bottom: 0;
     width: 140px;
     height: 200%;
-    background-image: url('pngegg.png');
+    background-image: url("/static/image/pngegg.png");
     background-repeat: space repeat;
     background-position: top left;
     background-size: contain;

@@ -1,0 +1,91 @@
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+  }
+  .register {
+    width: 400px;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 30px;
+    margin: 8% auto 0;
+    position: relative;
+    z-index: 1;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    transform-origin: 50% 0%;
+    transform: scale3d(1, 1, 1);
+    transition: none;
+    animation: expand 0.8s 0.6s ease-out forwards;
+    opacity: 0;
+    text-align: center;
+  }
+  .register h2 {
+    font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ffffff;
+  }
+  .register .row {
+    margin: 10px -15px;
+  }
+  .register .input_field {
+    position: relative;
+    margin-bottom: 20px;
+    animation: bounce 0.6s ease-out;
+  }
+  .register input[type=text],
+  .register input[type=email],
+  .register input[type=password] {
+    width: 100%;
+    padding: 8px 10px 9px 35px;
+    height: 35px;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+  }
+  .register input[type=submit] {
+    width: 29%;
+    padding: 10px;
+    background-color: #ff8c42;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .register input[type=submit]:hover {
+    background: #ff680b;
+  }
+  .register input[type=submit]:focus {
+    background: #ff680b;
+  }
+  @keyframes expand {
+    0% {
+      transform: scale3d(1, 0, 1);
+      opacity: 0;
+    }
+    25% {
+      transform: scale3d(1, 1.2, 1);
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+      opacity: 1;
+    }
+  }
+  @keyframes bounce {
+    0% {
+      transform: translate3d(0, -25px, 0);
+      opacity: 0;
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+  .register-label {
+    margin-bottom: 20px;
+  }

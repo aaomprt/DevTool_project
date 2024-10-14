@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>กองทุนผู้สูงอายุ</title>
-  <link rel="stylesheet" href="css\news.css">
+  <link rel="stylesheet" href="{% static 'news.css' %}">
 </head>
 
 <body>
@@ -13,18 +14,18 @@
   </header>
 
   <div class="bar">
-    <a href="#">บ้านหยาดหิมะ</a>
-    <a href="#">กิจกรรม</a>
-    <a href="#"><img src="css\pngwing.png" alt="Logo"  ></a>
-    <a href="news.html">ข่าวสาร</a>
-    <a href="#">จ้างงาน</a>
-  </div>
+    <a href="{% url 'home' %}">บ้านหยาดหิมะ</a>
+    <a href="{% url 'activity' %}">กิจกรรม</a>
+    <a href="{% url 'home' %}"><img src="{% static 'image/pngwing.png' %}" alt="Logo"></a>
+    <a href="{% url 'news' %}">ข่าวสาร</a>
+    <a href="{% url 'work' %}">จ้างงาน</a>
+</div>
 
   <div class="floral-left"></div>
   <div class="floral-right"></div>
   <div class="con">
     <h1> กองทุนผู้สูงอายุ ขอแจ้งปิดปรับปรุงระบบชั่วคราว เพื่อพัฒนาและเพิ่มประสิทธิภาพการบริการให้ดียิ่งขึ้น ระหว่างวันเสาร์ที่ 5 ถึงวันอาทิตย์ที่ 6 ตุลาคม พ.ศ. 2567 ตั้งแต่เวลา 00.00 - 04.00 น.</h1>
-    <img src="css\กองทุนผู้สูงอายุ.png">
+    <img src="{% static 'image\กองทุนผู้สูงอายุ.png' %}">
     <div class="news-section">
         <div class="news-item">
             <p>กองทุนผู้สูงอายุ ขอแจ้งปิดปรับปรุงระบบชั่วคราว เพื่อพัฒนาและเพิ่มประสิทธิภาพการบริการให้ดียิ่งขึ้น ระหว่างวันเสาร์ที่ 5 ถึงวันอาทิตย์ที่ 6 ตุลาคม พ.ศ. 2567 ตั้งแต่เวลา 00.00 - 04.00 น. โดยกำหนดปิดระบบชั่วคราวในช่วงเวลาที่มีการใช้ระบบน้อยที่สุด และคำนึงถึงผลกระทบต่อผู้ใช้บริการเป็นสำคัญ​</p>

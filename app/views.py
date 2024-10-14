@@ -77,3 +77,67 @@ class BlogDetailView(View):
     def get(self, request, pk):
         blog = get_object_or_404(Blog, pk=pk)
         return render(request, 'blog_detail.html', {'blog': blog, 'year': datetime.now().year})
+
+class ActivityView(View):
+    def get(self, request):
+        return render(request, 'activity.html', {})
+
+class WorkView(View):
+    def get(self, request):
+        return render(request, 'work_page.html', {})
+    
+class NewsView(View):
+    def get(self, request):
+        return render(request, 'news.html', {})
+
+class NewsPageOneView(View):
+    def get(self, request):
+        return render(request, 'page1.html', {})
+    
+class NewsPageTwoView(View):
+    def get(self, request):
+        return render(request, 'page2.html', {})
+    
+class NewsPageThreeView(View):
+    def get(self, request):
+        return render(request, 'page3.html', {})
+    
+class NewsPageFourView(View):
+    def get(self, request):
+        return render(request, 'page4.html', {})
+    
+class HobbyView(View):
+    def get(self, request):
+        return render(request, 'hobby.html', {})
+    
+class HobbyDetailView(View):
+    def get(self, request):
+        return render(request, 'detail_hob1.html', {})
+    
+class MoodView(View):
+    def get(self, request):
+        return render(request, 'mood.html', {})
+    
+class MoodDetailView(View):
+    def get(self, request):
+        return render(request, 'detail_mood1.html', {})
+    
+class HealthView(View):
+    def get(self, request):
+        return render(request, 'health.html', {})
+    
+class HealthDetailView(View):
+    def get(self, request):
+        return render(request, 'detail_health1.html', {})
+    
+class TechnologyView(View):
+    def get(self, request):
+        return render(request, 'technology.html', {})
+    
+class TechnologyDetailView(View):
+    def get(self, request):
+        return render(request, 'detail_tech1.html', {})
+    
+class WorkDetailView(View):
+    def get(self, request):
+        return render(request, 'detail-job.html', {})

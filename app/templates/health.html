@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,17 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>กิจกรรมเพื่อส่งเสริมสุขภาพร่างกาย</title>
-    <link rel="stylesheet" href="css/style_back_bar.css">
-    <link rel="stylesheet" href="css/style_actlist.css">
+    <link rel="stylesheet" href="{% static 'style_back_bar.css' %}">
+    <link rel="stylesheet" href="{% static 'style_actlist.css' %}">
 </head>
 
 <body>
     <div class="bar">
-        <a href="#">บ้านหยาดหิมะ</a>
-        <a href="activity.html">กิจกรรม</a>
-        <a href="#"><img src="image/pngwing.png" alt="Logo"></a>
-        <a href="news.html">ข่าวสาร</a>
-        <a href="#">จ้างงาน</a>
+        <a href="{% url 'home' %}">บ้านหยาดหิมะ</a>
+        <a href="{% url 'activity' %}">กิจกรรม</a>
+        <a href="{% url 'home' %}"><img src="{% static 'image/pngwing.png' %}" alt="Logo"></a>
+        <a href="{% url 'news' %}">ข่าวสาร</a>
+        <a href="{% url 'work' %}">จ้างงาน</a>
     </div>
 
     <div class="floral-left"></div>
@@ -24,16 +25,16 @@
     <div class="container">
         <h1>กิจกรรมเพื่อส่งเสริมสุขภาพร่างกาย</h1>
         <div class="box">
-            <img src="image/zumba.jpg">
+            <img src="{% static 'image/zumba.jpg' %}">
             <div class="content">
                 <h3>เต้นสะบัด ไปกับ Zumba Gold</h3>
                 <p><b>จัดกิจกรรม : </b>20/10/2567</p>
                 <p><b>สถานที่ : </b>ESG Bonding Hub ชั้น B1 The Ninth Towers</p>
-                <a href="detail_health1.html">ดูรายละเอียด</a>
+                <a href="{% url 'health_detail' %}">ดูรายละเอียด</a>
             </div>
         </div>
         <div class="box">
-            <img src="image/บำบัด.jpg">
+            <img src="{% static 'image/บำบัด.jpg' %}">
             <div class="content">
                 <h3>กิจกรรมบำบัดในผู้สูงอายุ</h3>
                 <p><b>จัดกิจกรรม : </b>14/11/2567</p>

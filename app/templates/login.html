@@ -1,28 +1,37 @@
 {%load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <style>
+        body {
+            background: rgb(255, 255, 255);
+            background: radial-gradient(circle,rgba(255,238,194,1) 0%, #ffab6f 83%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Login</h1>
-    </header>
-
-    <main>
-        <form method="post">
+    <div class="login">
+        <h2>Login</h2>
+        <form method="POST" action="{% url 'login' %}">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Login</button>
+            <input class="button" type="submit" value="Login">
         </form>
-        <a href="{% url 'register' %}">Register</a> <!-- ลิงค์ไปที่หน้าลงทะเบียนถ้าจำเป็น -->
-    </main>
-
-    <footer>
-        <p>&copy; {{ year }} Your Blog Name</p>
-    </footer>
+        <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+    </div>
 </body>
 </html>
+
+
