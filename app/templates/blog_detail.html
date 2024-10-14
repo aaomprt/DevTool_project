@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{{ blog.title }}</h1>
+        <nav>
+            {% if user.is_authenticated %}
+                <span>Welcome, {{ user.username }}!</span>
+                <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            {% if blog.image %}
+                <img src="{{ blog.image.url }}" alt="{{ blog.title }}" style="max-width: 100%; height: auto;">
+            {% endif %}
+            <p>By: {{ blog.author.username }}</p>
+            <p>Published on: {{ blog.created_at|date:"F j, Y" }}</p>
+            <div>
+                <h2>Content</h2>
+                <p>{{ blog.content }}</p>
+            </div>
+            <div>
+                <h3>Categories:</h3>
+                <ul>
+                    {% for category in blog.category.all %}
+                        <li>{{ category.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; {{ year }} Your Blog Name</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog Category</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- เพิ่มลิงค์สำหรับ CSS -->
+</head>
+<body>
+    <header>
+        <h1>Create Blog Category</h1>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'blog_create' %}">Create Blog</a>
+        </nav>
+    </header>
+
+    <main>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- แสดงฟอร์มแบบพารากราฟ -->
+            <button type="submit">Create Category</button>
+        </form>
+        <a href="{% url 'home' %}">Back to Home</a>
+    </main>
+
+    <footer>
+        <p>&copy; {{ year }} Your Blog Name</p> <!-- เพิ่มปีปัจจุบัน -->
+    </footer>
+</body>
+</html>
